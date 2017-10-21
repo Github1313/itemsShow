@@ -1,0 +1,43 @@
+@import "~common/style/variable.scss";
+
+$BseaFontSize:75;
+
+// 淘宝响应式框架转rem
+@function pxrem($px) {
+ @return ($px / $BseaFontSize) * 1rem; 
+}
+
+
+
+
+@mixin font-dpr($font-size){
+ font-size: $font-size;
+  [data-dpr="2"] & { font-size: $font-size * 2; }
+   [data-dpr="3"] & { font-size: $font-size * 3; } 
+}
+// //  dpr 为3 的时候 换高清图
+@mixin img-dpr($url){
+
+    background-image: url($url+"@2x.png");//默认  120px
+      [data-dpr="2"] & {
+        background-image: url($url+"@2x.png");//两倍高清 240px
+      }
+      [data-dpr="3"] & {
+          background-image: url($url+"@3x.png");//三倍高清 240px
+      }
+}
+@mixin setRem($name,$val...){
+  // ...固定写法,向后若干个值
+  $max:length($val);//4
+  $str:"";
+  // 从1开始到$max(4)
+  @for $i from 1 through $max{
+    $value:nth($val,$i)/$BseaFontSize;//2.17391
+    $str:$str+$value+rem; //4.34783rem
+
+    @if $i<$max{
+      $str:#{$str+" "};//4.34783rem空格4.34783rem空格
+    }
+  }
+  #{$name}:$str;
+}

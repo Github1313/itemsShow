@@ -1,0 +1,78 @@
+.shopcart{
+	position:fixed;
+	left:0;
+	bottom:0;
+	z-index:50;
+	width:100%;
+	height:pxrem(96);
+	background:#141d27;
+	.content{
+		display:flex;
+		.content-left{
+			width:pxrem(162);
+			.logo-wrapper{
+				width:pxrem(116);
+				height:pxrem(116);
+				border-radius: 50%;
+				margin-top:pxrem(-16);
+				margin-left: pxrem(36); 
+				text-align: center;
+				background:#141d27;
+				.logo{
+					display: inline-block;
+					width:pxrem(88);
+					height:pxrem(88);
+					background:#283139;
+					border-radius: 50%;
+					margin-top:pxrem(12);
+					.icon-cart:before{
+						@include font-dpr(24px);
+					}
+					.on:before{
+						color:#fff;
+					}
+					
+				}
+
+			}
+			.num{
+				text-align: center;
+				position: absolute;
+				top:pxrem(-16);
+				left:pxrem(104);
+				min-width:pxrem(58);
+				background:red;
+				border-radius: 16px;
+				@include setRem(padding,4,6,4,6);
+				@include font-dpr(8px);
+				color:#fff;
+
+			}
+		} 
+		.content-center{
+			flex:1;
+			line-height: pxrem(96);
+			.price{
+				@include font-dpr(18px);
+				color:#919396;
+				font-weight:700;
+				/*padding:pxrem(34) pxrem(24) pxrem(34) 0;*/
+				@include setRem(padding,14,24,14,0);
+				border-right:1px solid #2c343d;
+			}
+			.text{
+				@include font-dpr(10px);
+				color:#919396;
+			}
+		}
+		.content-right{
+			width:pxrem(210);
+			height:pxrem(96);
+			line-height: pxrem(96);
+			background:#2b333b;
+			@include font-dpr(14px);
+			color:#919396;
+			font-weight:700;
+		}
+	}
+}

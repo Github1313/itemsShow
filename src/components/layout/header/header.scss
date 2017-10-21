@@ -1,0 +1,98 @@
+.header{
+	position:relative;
+	background:rgba(7,17,27,0.5);
+	overflow: hidden;
+	.goods_pic{
+		display: inline-block;
+		@include setRem(padding,48,32,36,48);
+		.pic img{
+			border-radius: 12px;
+			width:pxrem(128); 
+			height:pxrem(128); 
+		}
+	}
+	.content{
+		display: inline-block;
+		vertical-align:top;
+		margin-top: pxrem(48);
+
+
+		.title{
+			height:pxrem(32);
+			@include img-dpr(brand);
+			background-repeat: no-repeat;
+			background-position: center left;
+			background-size: pxrem(64) pxrem(32);
+			line-height: pxrem(32);
+			color:$color-text;
+
+			.name{
+				margin-left:pxrem(64+12);
+				font-weight:bold;
+				@include font-dpr(16px); 
+			}
+		}
+		.descr{
+			margin-top:pxrem(16);
+			@include font-dpr(12px); 
+			font-weight:200;
+			color:$color-text;
+		}
+		.supports{
+			height: pxrem(30);
+			margin-top: pxrem(16);
+			@include img-dpr(decrease_2);
+			background-repeat: no-repeat;
+			background-position: center left;
+			background-size: pxrem(30) pxrem(30);
+			line-height: pxrem(30);
+			color:$color-text;
+			.text{
+				margin-left:pxrem(30+8);
+				@include font-dpr(10px); 
+			}
+		}
+	
+
+	}
+		.button-bar{
+			display: flex;
+			height:pxrem(56);
+			.pic{
+				width:pxrem(60);
+				height:pxrem(60);
+				@include img-dpr(bulletin);
+				background-repeat: no-repeat;
+				background-position: center left;
+				background-size: pxrem(54) pxrem(34);
+			}
+			.text{
+				flex: 1;
+				@include font-dpr(12px);
+				white-space: nowrap;
+				text-overflow:ellipsis;
+				overflow: hidden; 
+				color:$color-text;
+				line-height: pxrem(56);
+			}
+			.icon{
+				width: pxrem(10);
+				height:pxrem(10);
+				@include font-dpr(8px);
+				line-height: pxrem(56);
+				.icon-right:before{
+					color:#fff;
+				}
+			}
+		}
+		.bg{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			overflow: auto;
+			z-index:-1;
+			filter: blur(50px);
+		}
+}

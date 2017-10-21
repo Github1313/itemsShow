@@ -1,0 +1,85 @@
+.goods{
+	display:flex;
+	position:absolute;
+	top:pxrem(272+80);
+	bottom:pxrem(100);
+	width:100%;
+	overflow: hidden;
+	.menu-wrapper{
+		width:pxrem(160);
+		background:#f3f5f7;
+		.menu-item{
+			display:table;
+			width:pxrem(160);
+			height:pxrem(108);
+			text-align:center;
+			line-height: pxrem(108);
+			@include font-dpr(12px);
+			font-weight:200;
+			color:black;
+			border-bottom:1px solid rgba(7,17,27,0.1);
+		}
+		
+
+	}
+	.foods-wrapper{
+		flex:1;
+		.title{
+			height:pxrem(52);
+			padding-left:pxrem(36);
+			@include font-dpr(12px);
+			color:rgb(147,153,159);
+			border-left:4px solid #d9dde1;
+			background:#f3f5f7;
+			line-height:pxrem(52);
+		}
+		.food-item{
+			display: flex;	
+
+			.icon{
+				@include setRem(padding,36,20,0,36);
+				width:pxrem(114);
+				height:pxrem(114);
+				& img{
+					width: 100%;
+					height:100%;
+				}
+			}
+			.content{
+				padding-top:pxrem(36);
+				.name{
+					@include font-dpr(14px);
+					color:rgb(7,17,27);
+					font-weight:800;
+				}
+				.desc,.extra{
+					@include font-dpr(10px);
+					color:rgb(147,153,159);
+					padding:pxrem(16) 0;
+				}
+				.extra{
+					padding-top:0;
+				}
+				.price{
+				
+					color:red;
+					.ico{
+						@include font-dpr(10px);
+					}
+					.now{
+						@include font-dpr(14px);
+						font-weight:700;
+					}
+				}
+				
+			}
+		}
+
+	}
+	.current{
+		margin-top: -2px;
+		color:red !important;
+		
+	}
+
+}
